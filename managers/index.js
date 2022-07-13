@@ -1,5 +1,5 @@
 const express = require ("express")
-const productosManager = requiere ("../manages/express.js")
+const productosManager = require ("./express.js")
 
 const productosService = new productosManager ();
 
@@ -24,9 +24,11 @@ app.get ( "/productos" , (req, res) => {
 app.get ( "/productosRandom" , (req, res) => {
     const enviroment = async () => {
         let productos = await productosService.getAll()
-        let random = Math.round (Math.random() * productos.lenght)
+        console.log (productos.length)
+        let random = Math.round (Math.random()*productos.length)
+        console.log(random)
         res.send (
-            productos (random)
+            productos [random]
         )
     }
     enviroment()

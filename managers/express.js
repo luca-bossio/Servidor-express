@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const path = "carpeta/productos.json"
+const path = "../carpeta/productos.json"
 
 class contenedor {
 
